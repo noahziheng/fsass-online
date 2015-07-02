@@ -24,7 +24,8 @@ class DashBoardController extends Controller {
         if (!cookie("pid")) {
             $this->error("您还没登陆",'/Admin/Index');
         }else{
-            $user = M("users")->where("pid=".cookie("pid"))->find();
+            $UserM = M("users")
+            $user = $UserM->where("pid=".cookie("pid"))->find();
             if ($user['level'] == 1) {
             	$user['leveltext'] = "系统管理员";
             }else{
@@ -32,6 +33,9 @@ class DashBoardController extends Controller {
             }
             unset($user['password']);
             $routes = M("route")->order('status desc,dep,arr')->select();
+            foreach ($routes as $key => $route) {
+                $routes[$key]['user'] = $UserM->where("id=".$route['uid'])->getField('name');
+            }
             $this->assign("routes",$routes);
             $this->assign("user",$user);
             $this->display();
