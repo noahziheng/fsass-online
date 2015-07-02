@@ -24,7 +24,7 @@ class DashBoardController extends Controller {
         if (!cookie("pid")) {
             $this->error("您还没登陆",'/Admin/Index');
         }else{
-            $UserM = M("users")
+            $UserM = M("users");
             $user = $UserM->where("pid=".cookie("pid"))->find();
             if ($user['level'] == 1) {
             	$user['leveltext'] = "系统管理员";
