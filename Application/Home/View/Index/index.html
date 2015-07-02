@@ -131,6 +131,9 @@
           }
         });
       }
+      $(document).ready(function(){
+        $('#myModal').modal('show');
+      });
     </script>
   </head>
 
@@ -227,6 +230,36 @@
 
     </div> <!-- /container -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">公告</h4>
+          </div>
+          <div class="modal-body">
+            <div class="page-header">
+              <h3>欢迎加入模拟飞行助手在线版预览版本测试</h3>
+            </div>
+            <blockquote>
+              <p>本次测试航路数据库可能不会保留，但将作为下一版本的初始化依据。</p>
+              <p>Preview测试最早持续到7/20</p>
+            </blockquote>
+            <ul>
+              <li>本系统的设计理念是航路互助共享社区，虽然我们会保留过期的航路数据，但我们仍然需要您具有最新版本的AIRAC导航数据（Preview版本使用1506）</li>
+              <li>如果您发现航路存在错误或者已经过期，请点击航路后面的<button type="button" class="btn btn-success">航路过期？</button>将情况反馈给管理员</li>
+              <li>我们非常希望您为我们贡献航路，如您通过首页的采集窗口提交，我们将在1-2个工作日完成审核，在此之前航路也可在查询系统中获取到。</li>
+              <li>如您有时间、有能力帮助我们完善航路，请在管制群联系Ziheng Gao/S3或VATPRC管理员获取后台邀请码成为航路管理员为大家服务，期待您加入我们</li>
+              <li>由于本次测试未开启缓存，可能在查询过程中会花费一定时间，请耐心等待</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">开始体验</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/Public/ie10-viewport-bug-workaround.js"></script>
